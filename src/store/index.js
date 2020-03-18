@@ -3,7 +3,7 @@ import Vuex from "vuex";
 // import users from "./modules/users";
 // import projects from "./modules/projects";
 import axios from "axios";
-const apiURL = "localhost:5000/api";
+const apiURL = "https://api-datng.herokuapp.com/api";
 
 Vue.use(Vuex);
 

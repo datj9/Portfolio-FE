@@ -3,7 +3,7 @@ import Vuex from "vuex";
 // import users from "./modules/users";
 // import projects from "./modules/projects";
 import axios from "axios";
-const apiURL = "https://api-datng.herokuapp.com/api";
+const apiURL = "localhost:5000/api";
 
 Vue.use(Vuex);
 
@@ -26,7 +26,7 @@ export default new Vuex.Store({
 				data: { email, password },
 				headers: { "content-type": "application/json" }
 			});
-			console.log(res);
+			return res;
 		}
 	},
 	mutations: {}

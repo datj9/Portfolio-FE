@@ -29,7 +29,7 @@ a {
   margin: 0 auto;
 }
 #nav {
-  background: #276bd8;
+  background: #0044b3;
   height: 7vh;
   .navbar-container {
     height: 100%;
@@ -45,7 +45,7 @@ a {
       font-size: 2.2rem;
       color: #fff;
       &:hover {
-        background: #0044b3;
+        color: #0044b3;
       }
     }
   }

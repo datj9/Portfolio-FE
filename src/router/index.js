@@ -3,8 +3,18 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Signin from "../views/Signin.vue";
-
+import store from "../store";
 Vue.use(VueRouter);
+
+const ifNotAuthenticated = (to, from, next) => {
+	console.log(store.getters.isAuthenticated);
+	if (!store.getters.isAuthenticated) {
+		next();
+		return;
+	}
+	next("/");
+};
+//TODO
 
 const routes = [
 	{
@@ -23,7 +33,8 @@ const routes = [
 	{
 		path: "/signin",
 		name: "Signin",
-		component: Signin
+		component: Signin,
+		beforeEnter: ifNotAuthenticated
 	}
 ];
 

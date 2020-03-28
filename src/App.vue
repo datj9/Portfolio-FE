@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <div class="container navbar-container">
-        <router-link to="/">Home</router-link>
-        <router-link to="/about">About Me</router-link>
-      </div>
-    </div>
+    <Navbar />
     <router-view />
   </div>
 </template>
+
+<script>
+import Navbar from "./views/Navbar";
+export default {
+  name: "App",
+  components: { Navbar }
+};
+</script>
 
 <style lang="scss">
 @import "./style/_reset.scss";
@@ -27,27 +30,5 @@ a {
 .container {
   max-width: 90%;
   margin: 0 auto;
-}
-#nav {
-  background: #0044b3;
-  height: 7vh;
-  .navbar-container {
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 7%;
-      height: 100%;
-      padding: 0 1.2%;
-      font-size: 2.2rem;
-      color: #fff;
-      &:hover {
-        color: #0044b3;
-      }
-    }
-  }
 }
 </style>

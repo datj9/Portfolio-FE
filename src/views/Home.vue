@@ -9,50 +9,33 @@
             </div>
         </div>
         <div class="projects-section">
-            <div id="title">These are some of my projects</div>
-            <div class="container project-container">
-                <div
-                    v-for="project in viewAll ? projects : projects.slice(0, 6)"
-                    :key="project.id"
-                    class="project"
-                >
-                    <!-- <ContentLoader></ContentLoader> -->
-                    <div class="overflow-container">
-                        <img :src="project.imgUrl" />
-                        <div class="more-detail-overlay">
-                            <h3>Members of Team: 1</h3>
-                            <h3>My Role: Fullstack Developer</h3>
-                            <h3>Used Technologies: ReactJS, NodeJS, ExpressJS, MongoDB</h3>
-                            <router-link to="/about" class="btn">More Detail</router-link>
-                        </div>
-                    </div>
-
-                    <h3 class="project-name">{{ project.name }}</h3>
-                    <div class="btn-container">
-                        <router-link to="/" class="source">Source Code</router-link>
-                        <router-link to="/" class="more-detail">Visit Web</router-link>
-                    </div>
-                </div>
+            <div class="container">
+                <div id="list-title">These are some of my projects</div>
+                <ProjectList />
+                <div @click="toggleAll" class="all-btn">View All</div>
             </div>
-            <div @click="toggleAll" class="all-btn">View All</div>
         </div>
         <div class="profile-section">
             <div class="overlay"></div>
             <div class="profile-wp">
                 <h3 id="title">My Profiles</h3>
                 <div class="container profile-container">
-                    <router-link to="/" class="profile">
-                        <img src="../assets/images/facebook.svg" alt />
+                    <a
+                        href="https://www.facebook.com/profile.php?id=100007977246513"
+                        target="_blank"
+                        class="profile"
+                    >
+                        <img src="../assets/images/facebook1.svg" alt />
                         <span>Facebook</span>
-                    </router-link>
-                    <router-link to="/" class="profile">
-                        <img src="../assets/images/twitter.svg" alt />
-                        <span>Twitter</span>
-                    </router-link>
-                    <router-link to="/" class="profile">
-                        <img src="../assets/images/instagram.svg" alt />
+                    </a>
+                    <a href="https://www.hackerrank.com/tandat198" target="_blank" class="profile">
+                        <img src="../assets/images/hackerrank.svg" alt />
+                        <span>Hacker Rank</span>
+                    </a>
+                    <a href="https://www.instagram.com/ngtandat198" target="_blank" class="profile">
+                        <img src="../assets/images/instagram1.svg" alt />
                         <span>Instagram</span>
-                    </router-link>
+                    </a>
                 </div>
             </div>
         </div>
@@ -106,127 +89,12 @@
 .projects-section {
     padding: 4% 0 3%;
     background: #fff;
-    #title {
+    #list-title {
         font-size: 3.3rem;
+        font-weight: 600;
         color: #276bd8;
         text-align: center;
         margin-bottom: 2.5%;
-    }
-    .project-container {
-        display: flex;
-        justify-content: space-between;
-        align-content: space-between;
-        flex-wrap: wrap;
-        .project {
-            width: 32%;
-            height: 40%;
-            margin-bottom: 4%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            .overflow-container {
-                overflow: hidden;
-                height: 100%;
-                position: relative;
-                .more-detail-overlay {
-                    height: 100%;
-                    display: none;
-                }
-                .btn {
-                    background: #276bd8;
-                    color: #fff;
-                    border: 0.1rem solid #276bd8;
-                    margin: 0 auto;
-                    width: 30%;
-                    text-align: center;
-                    border-radius: 0.2rem;
-                    &:hover {
-                        background: #fff;
-                        color: #276bd8;
-                        border-color: #276bd8;
-                    }
-                }
-                &:hover {
-                    img {
-                        opacity: 0.3;
-                    }
-                    .more-detail-overlay {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        position: absolute;
-                        top: 0;
-                        z-index: 1;
-                        text-align: left;
-                        font-size: 2rem;
-                        padding: 0 5%;
-                    }
-                }
-            }
-            .project-name {
-                font-size: 2.5rem;
-                text-align: center;
-                color: #276bd8;
-                text-transform: capitalize;
-            }
-            .btn-container {
-                display: flex;
-                justify-content: space-around;
-                .more-detail,
-                .source {
-                    font-size: 2rem;
-                    width: 35%;
-                    margin-top: 2%;
-                    padding: 1%;
-                }
-                .more-detail {
-                    background: #276bd8;
-                    color: #fff;
-                    box-sizing: border-box;
-                    &:hover {
-                        border: 1px solid #276bd8;
-                        background: #fff;
-                        color: #276bd8;
-                    }
-                }
-                .source {
-                    border: 1px solid #276bd8;
-                    background: #fff;
-                    color: #276bd8;
-                    &:hover {
-                        background: #276bd8;
-                        color: #fff;
-                    }
-                }
-            }
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 1rem;
-        }
-    }
-    .all-btn {
-        border: 1px solid #276bd8;
-        border-radius: 0.4rem;
-        background: #276bd8;
-        color: #fff;
-        width: 7%;
-        font-size: 2.3rem;
-        text-align: center;
-        margin: 0 auto;
-        padding: 0.6% 0.5%;
-        &:hover {
-            border-color: #276bd8;
-            background: #fff;
-            color: #276bd8;
-            cursor: pointer;
-        }
-    }
-    a {
-        display: block;
-        border-radius: 0.4rem;
-        text-align: center;
     }
 }
 
@@ -249,6 +117,7 @@
         justify-content: center;
     }
     .profile-wp {
+        width: 100%;
         position: absolute;
         top: 20%;
     }
@@ -271,7 +140,9 @@
                 align-items: center;
                 justify-content: center;
             }
-            &:visited {
+
+            &:visited,
+            &:link {
                 color: #000;
             }
             &:hover img {
@@ -313,21 +184,14 @@
 </style>
 
 <script>
+import ProjectList from "../components/ProjectList";
 export default {
     name: "Home",
+    components: {
+        ProjectList
+    },
     data() {
-        let projects = [];
-        for (let index = 0; index < 12; index++) {
-            projects.push({
-                id: index + "",
-                imgUrl:
-                    "https://portfolio-dn.s3-ap-southeast-1.amazonaws.com/1584437927183%20-%20coding-computer-data-depth-of-field-577585.jpg",
-                name: `Project ${index}`
-            });
-        }
-
         return {
-            projects,
             viewAll: false,
             show: true
         };

@@ -1,23 +1,27 @@
 <template>
     <div class="container project-list">
         <h2 class="list-title">My Projects</h2>
+        <button v-if="isAuthenticated">Add New Project</button>
         <ProjectList />
+        <FormModal v-if="isAuthenticated" />
     </div>
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 import ProjectList from "../components/ProjectList";
+import FormModal from "../components/FormModal";
 export default {
     name: "MyProjects",
     components: {
-        ProjectList
+        ProjectList,
+        FormModal
     },
     methods: {
         ...mapActions(["fetchProjects"])
     },
     computed: {
-        ...mapGetters(["allProjects"])
+        ...mapGetters(["allProjects", "isAuthenticated"])
     },
     created() {
         this.fetchProjects();

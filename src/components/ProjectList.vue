@@ -1,20 +1,21 @@
 <template>
     <div class="project-container">
-        <div v-for="project in allProjects" :key="project._id" class="project">
-            <!-- <ContentLoader></ContentLoader> -->
+        <div v-if="isLoading" class="loader-wp">
+            <ContentLoader v-for="index in 6" :key="index" />
+        </div>
+        <div v-else v-for="project in allProjects" :key="project._id" class="project">
             <div class="overflow-container">
                 <img :src="project.imageUrl" />
                 <div class="more-detail-overlay">
-                    <h3>Members of Team: 1</h3>
-                    <h3>My Role: Fullstack Developer</h3>
-                    <h3>Used Technologies: ReactJS, NodeJS, ExpressJS, MongoDB</h3>
-                    <router-link to="/about" class="btn">More Detail</router-link>
+                    <span>Number of Members: 1</span>
+                    <span>Role: Front-end and Back-end Developer</span>
+                    <span>Used Technologies: ReactJS, NodeJS, ExpressJS, MongoDB</span>
                 </div>
             </div>
             <h3 class="project-name">{{ project.name }}</h3>
             <div class="btn-container">
-                <a :href="project.sourceCodeUrl" class="source">Source Code</a>
-                <a :href="project.linkDemoUrl" class="more-detail">Visit Web</a>
+                <a :href="project.sourceCodeUrl" target="_blank" class="source">Source Code</a>
+                <a :href="project.linkDemoUrl" target="_blank" class="more-detail">Visit Web</a>
             </div>
         </div>
     </div>
@@ -22,13 +23,18 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import ContentLoader from "./ContentLoader";
+
 export default {
     name: "ProjectList",
+    components: {
+        ContentLoader
+    },
     methods: {
         ...mapActions(["fetchProjects"])
     },
     computed: {
-        ...mapGetters(["allProjects"])
+        ...mapGetters(["allProjects", "isLoading"])
     },
     created() {
         this.fetchProjects();
@@ -139,24 +145,6 @@ export default {
         max-width: 100%;
         height: auto;
         border-radius: 1rem;
-    }
-}
-
-.all-btn {
-    border: 1px solid #276bd8;
-    border-radius: 0.4rem;
-    background: #276bd8;
-    color: #fff;
-    width: 7%;
-    font-size: 2.3rem;
-    text-align: center;
-    margin: 0 auto;
-    padding: 0.6% 0.5%;
-    &:hover {
-        border-color: #276bd8;
-        background: #fff;
-        color: #276bd8;
-        cursor: pointer;
     }
 }
 </style>

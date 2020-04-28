@@ -12,7 +12,7 @@
             <div class="container">
                 <div id="list-title">These are some of my projects</div>
                 <ProjectList />
-                <div @click="toggleAll" class="all-btn">View All</div>
+                <router-link v-show="!isLoading" to="/my-projects" class="all-btn">View All</router-link>
             </div>
         </div>
         <div class="profile-section">
@@ -25,16 +25,16 @@
                         target="_blank"
                         class="profile"
                     >
-                        <img src="../assets/images/facebook1.svg" alt />
+                        <img src="../assets/images/facebook.svg" alt />
                         <span>Facebook</span>
                     </a>
                     <a href="https://www.hackerrank.com/tandat198" target="_blank" class="profile">
                         <img src="../assets/images/hackerrank.svg" alt />
-                        <span>Hacker Rank</span>
+                        <span>HackerRank</span>
                     </a>
-                    <a href="https://www.instagram.com/ngtandat198" target="_blank" class="profile">
-                        <img src="../assets/images/instagram1.svg" alt />
-                        <span>Instagram</span>
+                    <a href="https://github.com/tandat198" target="_blank" class="profile">
+                        <img src="../assets/images/github.svg" alt />
+                        <span>GitHub</span>
                     </a>
                 </div>
             </div>
@@ -89,12 +89,34 @@
 .projects-section {
     padding: 4% 0 3%;
     background: #fff;
+
     #list-title {
         font-size: 3.3rem;
         font-weight: 600;
         color: #276bd8;
         text-align: center;
         margin-bottom: 2.5%;
+    }
+
+    .all-btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 1px solid #276bd8;
+        border-radius: 0.4rem;
+        background: #276bd8;
+        color: #fff;
+        width: 7%;
+        font-size: 2.3rem;
+        text-align: center;
+        margin: 0 auto;
+        padding: 0.6% 0.5%;
+        &:hover {
+            border-color: #276bd8;
+            background: #fff;
+            color: #276bd8;
+            cursor: pointer;
+        }
     }
 }
 
@@ -184,30 +206,15 @@
 </style>
 
 <script>
+import { mapGetters } from "vuex";
 import ProjectList from "../components/ProjectList";
 export default {
     name: "Home",
     components: {
         ProjectList
     },
-    data() {
-        return {
-            viewAll: false,
-            show: true
-        };
-    },
-    methods: {
-        toggleAll() {
-            this.viewAll = !this.viewAll;
-        },
-        onOff() {
-            setInterval(() => {
-                this.show = !this.show;
-            }, 2000);
-        }
-    },
-    created() {
-        this.onOff();
+    computed: {
+        ...mapGetters(["isLoading"])
     }
 };
 </script>

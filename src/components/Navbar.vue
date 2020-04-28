@@ -14,8 +14,8 @@
                 <li>
                     <router-link :to="{ name: 'About' }">About Me</router-link>
                 </li>
-                <li>
-                    <router-link class="signin" :to="{ name: 'Signin' }">Sign In</router-link>
+                <li v-show="false">
+                    <router-link :to="{ name: 'Signin' }">Sign In</router-link>
                 </li>
                 <li>
                     <router-link v-if="isAuthenticated" :to="{ name: 'About' }">Add Project</router-link>
@@ -58,15 +58,10 @@ export default {
                     font-size: 2.2rem;
                     color: #fff;
                     &:hover {
-                        color: #0044b3;
-                        background: #fff;
+                        background: rgb(51, 62, 218);
                     }
                 }
             }
-        }
-
-        .signin {
-            display: none;
         }
     }
 }

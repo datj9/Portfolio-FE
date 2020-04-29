@@ -37,4 +37,10 @@ export default {
         font-size: 3rem;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .project-list {
+        margin-top: 10rem;
+    }
+}
 </style>

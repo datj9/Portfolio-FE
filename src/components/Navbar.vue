@@ -43,6 +43,8 @@ export default {
 #nav {
     background: #0044b3;
     height: 7vh;
+    width: 100%;
+    z-index: 11;
 
     .navbar-container {
         height: 100%;
@@ -55,7 +57,13 @@ export default {
             display: none;
         }
 
+        label {
+            z-index: 10;
+            height: 100%;
+        }
+
         .hamburger-icon {
+            height: 100%;
             float: right;
             display: none;
         }
@@ -85,28 +93,25 @@ export default {
 
 @media screen and (max-width: 768px) {
     #nav {
+        height: 10vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+
         .container {
             max-width: 100%;
             padding: 0 2%;
         }
 
         .navbar-container {
-            position: fixed;
-            top: 0;
-            left: 0;
             padding: 0 2%;
             box-sizing: border-box;
-            height: auto;
+            height: 100%;
             background: #0044b3;
             justify-content: center;
             flex-direction: column;
 
-            label {
-                z-index: 10;
-            }
-
             .hamburger-icon {
-                width: 8%;
                 display: block;
             }
 
@@ -119,10 +124,10 @@ export default {
             .nav-items {
                 flex-direction: column;
                 position: absolute;
-                transform: translateY(calc(-100% - 7vh));
+                transform: translateY(calc(-100% - 10vh));
                 transition: transform 0.6s;
                 left: 0;
-                top: 7vh;
+                top: 10vh;
                 width: 102%;
                 padding: 2rem 0;
 
@@ -134,6 +139,16 @@ export default {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #nav {
+        .navbar-container {
+            .nav-items {
+                top: 4vh;
             }
         }
     }

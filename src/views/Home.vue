@@ -87,7 +87,7 @@
     }
 }
 .projects-section {
-    padding: 4% 0 3%;
+    padding: 10% 0;
     background: #fff;
 
     #list-title {
@@ -106,8 +106,8 @@
         border-radius: 0.4rem;
         background: #276bd8;
         color: #fff;
-        width: 7%;
-        font-size: 2.3rem;
+        width: 8.5rem;
+        font-size: 2.2rem;
         text-align: center;
         margin: 0 auto;
         padding: 0.6% 0.5%;
@@ -148,11 +148,10 @@
         flex-wrap: nowrap;
         justify-content: space-around;
         .profile {
-            max-width: 4%;
             text-align: center;
             img {
-                max-width: 100%;
-                height: auto;
+                width: 6rem;
+                height: 6rem;
                 transition-duration: 0.4s;
             }
             span {

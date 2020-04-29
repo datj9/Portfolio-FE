@@ -34,4 +34,14 @@ export default {
 svg {
     width: 33%;
 }
+@media only screen and (max-width: 768px) {
+    svg {
+        width: 49%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    svg {
+        width: 100%;
+    }
+}
 </style>

@@ -147,4 +147,20 @@ export default {
         border-radius: 1rem;
     }
 }
+
+@media only screen and(max-width: 768px) {
+    .project-container {
+        .project {
+            width: 48%;
+        }
+    }
+}
+
+@media only screen and(max-width: 576px) {
+    .project-container {
+        .project {
+            width: 100%;
+        }
+    }
+}
 </style>

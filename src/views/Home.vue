@@ -11,7 +11,7 @@
         <div class="projects-section">
             <div class="container">
                 <div id="list-title">These are some of my projects</div>
-                <ProjectList />
+                <ProjectList :numberOfItems="3" />
                 <router-link v-show="!isLoading" to="/my-projects" class="all-btn">View All</router-link>
             </div>
         </div>
@@ -75,7 +75,7 @@
         text-align: center;
         border-radius: 0.5rem;
         padding: 1.5rem;
-        animation: move-right-in 2.5s;
+        animation: move-right-in 1s;
         #title {
             font-size: 3rem;
             font-weight: 700;
@@ -132,6 +132,7 @@
         opacity: 0.2;
         flex-direction: column;
     }
+
     #title {
         color: #000;
         font-size: 3.2rem;
@@ -140,6 +141,7 @@
         display: flex;
         justify-content: center;
     }
+
     .profile-wp {
         width: 100%;
         position: absolute;
@@ -150,12 +152,13 @@
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-around;
+
         .profile {
             text-align: center;
             img {
                 width: 6rem;
                 height: 6rem;
-                transition-duration: 0.4s;
+                transition: transform 0.3s;
             }
             span {
                 font-size: 2.5rem;
@@ -188,6 +191,12 @@
     }
     h4 {
         font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .overlay {
+        background-attachment: unset;
     }
 }
 

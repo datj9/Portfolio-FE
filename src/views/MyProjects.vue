@@ -2,7 +2,7 @@
     <div class="container project-list">
         <h2 class="list-title">My Projects</h2>
         <button v-if="isAuthenticated">Add New Project</button>
-        <ProjectList />
+        <ProjectList :numberOfItems="6" />
         <FormModal v-if="isAuthenticated" />
     </div>
 </template>

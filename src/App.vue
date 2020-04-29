@@ -37,7 +37,7 @@ a {
 
 @media screen and (max-width: 768px) {
     .container {
-        max-width: 98%;
+        max-width: 95%;
     }
 
     html {
@@ -45,9 +45,9 @@ a {
     }
 }
 
-// @media screen and (max-width: 567px) {
-//     html {
-//         font-size: 52%;
-//     }
-// }
+@media screen and (max-width: 576px) {
+    .container {
+        max-width: 99%;
+    }
+}
 </style>

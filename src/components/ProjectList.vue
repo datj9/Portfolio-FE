@@ -1,7 +1,7 @@
 <template>
     <div class="project-container">
         <div v-if="isLoading" class="loader-wp">
-            <ContentLoader v-for="index in 6" :key="index" />
+            <ContentLoader v-for="index in numberOfItems" :key="index" />
         </div>
         <div v-else v-for="project in allProjects" :key="project._id" class="project">
             <div class="overflow-container">
@@ -27,6 +27,11 @@ import ContentLoader from "./ContentLoader";
 
 export default {
     name: "ProjectList",
+    props: {
+        numberOfItems: {
+            type: Number
+        }
+    },
     components: {
         ContentLoader
     },
@@ -48,6 +53,11 @@ export default {
     justify-content: space-between;
     align-content: space-between;
     flex-wrap: wrap;
+
+    .loader-wp {
+        width: 100%;
+    }
+
     .project {
         width: 32%;
         height: 40%;

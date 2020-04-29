@@ -93,7 +93,7 @@ export default {
 
 @media screen and (max-width: 768px) {
     #nav {
-        height: 10vh;
+        height: 9vh;
         position: fixed;
         top: 0;
         left: 0;
@@ -124,10 +124,10 @@ export default {
             .nav-items {
                 flex-direction: column;
                 position: absolute;
-                transform: translateY(calc(-100% - 10vh));
+                transform: translateY(calc(-100% - 9vh));
                 transition: transform 0.6s;
                 left: 0;
-                top: 10vh;
+                top: 9vh;
                 width: 102%;
                 padding: 6rem 0;
 

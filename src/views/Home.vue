@@ -121,10 +121,12 @@
 }
 
 .profile-section {
-    margin: 2% 0;
+    padding: 2.5rem 0;
     position: relative;
+    height: 55vh;
+
     .overlay {
-        height: 45vh;
+        height: 100%;
         background-image: url("../assets/images/social.jpg");
         background-position: bottom;
         opacity: 0.2;
@@ -141,7 +143,8 @@
     .profile-wp {
         width: 100%;
         position: absolute;
-        top: 20%;
+        top: 50%;
+        transform: translateY(-50%);
     }
     .profile-container {
         display: flex;
@@ -178,7 +181,7 @@
 
 .contact-section {
     margin: 0 2%;
-    padding-bottom: 2.5%;
+    padding: 4rem 0;
     #title {
         color: #000;
         font-size: 3rem;

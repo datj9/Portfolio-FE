@@ -129,9 +129,10 @@ export default {
                 left: 0;
                 top: 10vh;
                 width: 102%;
-                padding: 2rem 0;
+                padding: 6rem 0;
 
                 li {
+                    padding: 1rem 0;
                     a {
                         &:hover {
                             background: none;
@@ -148,7 +149,7 @@ export default {
     #nav {
         .navbar-container {
             .nav-items {
-                top: 4vh;
+                top: 9vh;
             }
         }
     }

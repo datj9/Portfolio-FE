@@ -6,10 +6,10 @@
         :primaryColor="primaryColor"
         :secondaryColor="secondaryColor"
     >
-        <rect x="0" y="0" rx="5" ry="5" width="1060" height="450" />
-        <rect x="235" y="470" rx="5" ry="5" width="590" height="70" />
-        <rect x="0" y="575" rx="5" ry="5" width="480" height="80" />
-        <rect x="580" y="575" rx="5" ry="5" width="480" height="80" />
+        <rect x="0" y="0" rx="30" ry="30" width="1060" height="450" />
+        <rect x="285" y="470" rx="10" ry="10" width="540" height="65" />
+        <rect x="100" y="575" rx="10" ry="10" width="380" height="80" />
+        <rect x="580" y="575" rx="10" ry="10" width="380" height="80" />
     </content-loader>
 </template>
 
@@ -32,11 +32,11 @@ export default {
 </script>
 <style lang="scss">
 svg {
-    width: 28%;
+    width: 32%;
 }
 @media only screen and (max-width: 768px) {
     svg {
-        width: 44%;
+        width: 48%;
     }
 }
 @media only screen and (max-width: 576px) {

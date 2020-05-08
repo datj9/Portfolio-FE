@@ -42,7 +42,7 @@
         <div class="contact-section">
             <div class="container">
                 <h3 id="title">Contact Me</h3>
-                <h4>Mobile Phone Number: 084 26 93293</h4>
+                <h4>Mobile Phone Number: 084.26.93293</h4>
                 <h4>Email: datng198@gmail.com</h4>
             </div>
         </div>

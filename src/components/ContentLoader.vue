@@ -32,11 +32,11 @@ export default {
 </script>
 <style lang="scss">
 svg {
-    width: 33%;
+    width: 30%;
 }
 @media only screen and (max-width: 768px) {
     svg {
-        width: 49%;
+        width: 47%;
     }
 }
 @media only screen and (max-width: 576px) {
